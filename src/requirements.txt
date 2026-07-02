@@ -1,12 +1,6 @@
 streamlit
 pandas
 numpy
-geopandas
-phonenumbers
-openpyxl
-streamlit
-pandas
-numpy
 plotly
 openpyxl
 geopandas
