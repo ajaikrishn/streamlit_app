@@ -299,50 +299,22 @@ def tab_dashboard():
     col_l2, col_r2 = st.columns(2)
 
     with col_l2:
-
         st.subheader("Data Quality")
-
-        fig = px.bar(
-            quality_df,
-            x="Count",
-            y="Issue",
-            orientation="h",
-            text="Count"
-        )
-
-        st.plotly_chart(
-            fig,
-            use_container_width=True
-        )
-
+        if not quality_df.empty and "Issue" in quality_df.columns and "Count" in quality_df.columns:
+            fig = px.bar(quality_df, x="Count", y="Issue", orientation="h", text="Count")
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info(f"No data quality data. Columns: {quality_df.columns.tolist() if not quality_df.empty else 'file empty/missing'}")
     with col_r2:
-
-        st.subheader("GIS Validation")
-        kobo_df = safe_read(kobo_val_path)
-
-        gis = (
-            kobo_df["Status"]
-            .value_counts()
-            .reset_index()
-        )
-
-        gis.columns = [
-            "Status",
-            "Count"
-        ]
-
-        fig = px.pie(
-            gis,
-            names="Status",
-            values="Count",
-            hole=0.5
-        )
-
-        st.plotly_chart(
-            fig,
-            use_container_width=True
-        )
-
+    st.subheader("GIS Validation")
+    kobo_df = safe_read(kobo_val_path)
+    if not kobo_df.empty and "Status" in kobo_df.columns:
+        gis = kobo_df["Status"].value_counts().reset_index()
+        gis.columns = ["Status", "Count"]
+        fig = px.pie(gis, names="Status", values="Count", hole=0.5)
+        st.plotly_chart(fig, use_container_width=True)
+    else:
+        st.info("No GIS validation data available.")
     st.markdown("---")
 
     # ── Village Summary + Block Summary ──────────────────────────────────────
