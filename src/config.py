@@ -1,23 +1,25 @@
 import sys
 import os
 
-base_dir = '/home/ajai-krishna/work/website_streamlit/streamlit_app/src'
-data_dir = '/home/ajai-krishna/work/website_streamlit/streamlit_app/src/Data'
-output_dir = os.path.join(data_dir,"Outputs")
-meta_dir = os.path.join(f'{output_dir}/Meta_data')
-output_gis_validation = os.path.join(f'{output_dir}/Gis-validations')
-data_overview_out = os.path.join(f'{output_dir}/Data_overview')
+base_dir = os.path.dirname(os.path.abspath(__file__))
+data_dir = os.path.join(base_dir, "Data")
+output_dir = os.path.join(data_dir, "Outputs")
+meta_dir = os.path.join(output_dir, "Meta_data")
+output_gis_validation = os.path.join(output_dir, "Gis-validations")
+data_overview_out = os.path.join(output_dir, "Data_overview")
 try:
     os.makedirs(output_dir, exist_ok=True)
 except (PermissionError, OSError):
     pass
 
-data1 = os.path.join(data_dir,"20250605_Makkala_Vikasa_Master_Sheet (1) (1).xlsx")
-data2 = os.path.join(data_dir,"20260507_YIDS_Approved sheet (1) (1).xlsx")
-master_df = os.path.join(f'{output_dir}/master_Database.xlsx')
-master_cleaned_df = os.path.join(f'{output_dir}/master_Database_cleaned.xlsx')
-kml_data = os.path.join(data_dir,"20260507_YIDS_MasterKML_Filtered (1) (2).kmz") 
-kml_master_data = os.path.join(data_dir,"doc.kml")
+data1 = os.path.join(data_dir, "20250605_Makkala_Vikasa_Master_Sheet (1) (1).xlsx")
+data2 = os.path.join(data_dir, "20260507_YIDS_Approved sheet (1) (1).xlsx")
+master_df = os.path.join(output_dir, "master_Database.xlsx")
+master_cleaned_df = os.path.join(output_dir, "master_cleaned_df.xlsx")  # match app2.py's master_path name
+kml_data = os.path.join(data_dir, "20260507_YIDS_MasterKML_Filtered (1) (2).kmz")
+kml_master_data = os.path.join(data_dir, "doc.kml")
+
+# ... column_mapping / village_mapping / block_mapping unchanged, leave as-is
 
 
 # survey_df = meta_dfs["survey"]

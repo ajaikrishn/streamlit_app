@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from plot_reports import plot_report 
-project_root = "/home/ajai-krishna/work/website_streamlit/streamlit_app/src"
+project_root = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, project_root)
 
 from config import *
