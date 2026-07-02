@@ -304,17 +304,19 @@ def tab_dashboard():
             fig = px.bar(quality_df, x="Count", y="Issue", orientation="h", text="Count")
             st.plotly_chart(fig, use_container_width=True)
         else:
-            st.info(f"No data quality data. Columns: {quality_df.columns.tolist() if not quality_df.empty else 'file empty/missing'}")
+            st.info("No data quality data available.")
+
     with col_r2:
-    st.subheader("GIS Validation")
-    kobo_df = safe_read(kobo_val_path)
-    if not kobo_df.empty and "Status" in kobo_df.columns:
-        gis = kobo_df["Status"].value_counts().reset_index()
-        gis.columns = ["Status", "Count"]
-        fig = px.pie(gis, names="Status", values="Count", hole=0.5)
-        st.plotly_chart(fig, use_container_width=True)
-    else:
-        st.info("No GIS validation data available.")
+        st.subheader("GIS Validation")
+        kobo_df = safe_read(kobo_val_path)
+        if not kobo_df.empty and "Status" in kobo_df.columns:
+            gis = kobo_df["Status"].value_counts().reset_index()
+            gis.columns = ["Status", "Count"]
+            fig = px.pie(gis, names="Status", values="Count", hole=0.5)
+            st.plotly_chart(fig, use_container_width=True)
+        else:
+            st.info("No GIS validation data available.")
+
     st.markdown("---")
 
     # ── Village Summary + Block Summary ──────────────────────────────────────
