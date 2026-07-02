@@ -1,6 +1,5 @@
 import sys
 import os
-from meta_df import *
 
 base_dir = '/home/ajai-krishna/work/Greenipath/Data-analysis_and_reporting_end-to-end/src'
 data_dir = '/home/ajai-krishna/work/Greenipath/Data-analysis_and_reporting_end-to-end/src/Data/'
