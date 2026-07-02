@@ -167,6 +167,11 @@ def load_completion():
     return safe_read(completion_path)
 
 
+st.write("output_dir:", output_dir)
+st.write("exists:", os.path.exists(output_dir))
+st.write("contents:", os.listdir(output_dir) if os.path.exists(output_dir) else "dir missing")
+
+
 # ── TAB 1: DASHBOARD ──────────────────────────────────────────────────────────
 
 def tab_dashboard():
