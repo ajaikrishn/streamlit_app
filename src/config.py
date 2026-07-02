@@ -7,7 +7,10 @@ output_dir = os.path.join(data_dir,"Outputs")
 meta_dir = os.path.join(f'{output_dir}/Meta_data')
 output_gis_validation = os.path.join(f'{output_dir}/Gis-validations')
 data_overview_out = os.path.join(f'{output_dir}/Data_overview')
-os.makedirs(output_dir,exist_ok = True)
+try:
+    os.makedirs(output_dir, exist_ok=True)
+except (PermissionError, OSError):
+    pass
 
 data1 = os.path.join(data_dir,"20250605_Makkala_Vikasa_Master_Sheet (1) (1).xlsx")
 data2 = os.path.join(data_dir,"20260507_YIDS_Approved sheet (1) (1).xlsx")
