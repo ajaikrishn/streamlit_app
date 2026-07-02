@@ -6,7 +6,6 @@ openpyxl
 geopandas
 shapely
 pyogrio
-fiona
 folium
 streamlit-folium
 matplotlib
