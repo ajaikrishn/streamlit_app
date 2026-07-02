@@ -6,9 +6,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from plot_reports import plot_report 
-BASE_DIR = Path(__file__).resolve().parents[1]
-if str(BASE_DIR) not in sys.path:
-    sys.path.insert(0, str(BASE_DIR))
+project_root = "/home/ajai-krishna/work/website_streamlit/streamlit_app/src"
+sys.path.insert(0, project_root)
 
 from config import *
 import xml.etree.ElementTree as ET
