@@ -1,8 +1,8 @@
 import sys
 import os
 
-base_dir = '/home/ajai-krishna/work/Greenipath/Data-analysis_and_reporting_end-to-end/src'
-data_dir = '/home/ajai-krishna/work/Greenipath/Data-analysis_and_reporting_end-to-end/src/Data/'
+base_dir = '/home/ajai-krishna/work/website_streamlit/streamlit_app/src'
+data_dir = '/home/ajai-krishna/work/website_streamlit/streamlit_app/src/Data/'
 output_dir = os.path.join(data_dir,"Outputs")
 meta_dir = os.path.join(f'{output_dir}/Meta_data')
 output_gis_validation = os.path.join(f'{output_dir}/Gis-validations')
