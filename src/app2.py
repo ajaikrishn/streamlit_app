@@ -44,7 +44,7 @@ def fmt(val, suffix=""):
 
 def kpi_cards(items, cols_per_row=6):
         """items: list of (label, value, color) tuples. color: 'green'|'orange'|'black'"""
-        color_map = {"green": "#1e8e3e", "orange": "#e67e22", "black": "#111"}
+        color_map = {"green": "#8e871e", "orange": "#3622e6", "black": "#111"}
         css = """
         <style>
         .kpi-card {border:1px solid #ddd; border-radius:8px; padding:14px 10px;
