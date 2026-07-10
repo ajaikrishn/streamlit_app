@@ -58,7 +58,7 @@ def kpi_cards(items, cols_per_row=6):
         for row in rows:
             cols = st.columns(len(row))
             for c, (label, val, color) in zip(cols, row):
-                hexcol = color_map.get(color, "#111")
+                hexcol = color_map.get(color, "#F0FFFF")
                 c.markdown(
                     f'<div class="kpi-card"><div class="kpi-val" style="color:{hexcol}">{val}</div>'
                     f'<div class="kpi-label">{label}</div></div>',
